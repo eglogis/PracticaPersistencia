@@ -16,6 +16,8 @@
 		2861761225D05B3F00388E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861761025D05B3F00388E87 /* LaunchScreen.storyboard */; };
 		2861762325D063BE00388E87 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762225D063BE00388E87 /* DataController.swift */; };
 		2861762725D0682800388E87 /* NotebookMo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762625D0682800388E87 /* NotebookMo.swift */; };
+		2861762C25D06BA200388E87 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762B25D06BA200388E87 /* NotebooksViewController.swift */; };
+		2861762F25D06BED00388E87 /* Notebooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861762E25D06BED00388E87 /* Notebooks.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		2861761325D05B3F00388E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2861762225D063BE00388E87 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2861762625D0682800388E87 /* NotebookMo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookMo.swift; sourceTree = "<group>"; };
+		2861762B25D06BA200388E87 /* NotebooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
+		2861762E25D06BED00388E87 /* Notebooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notebooks.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		2861761D25D05D4A00388E87 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				2861762A25D06B2300388E87 /* Notebooks */,
 				2861761E25D05D6700388E87 /* Main */,
 			);
 			path = Screens;
@@ -122,6 +127,15 @@
 				2861762625D0682800388E87 /* NotebookMo.swift */,
 			);
 			path = Local;
+			sourceTree = "<group>";
+		};
+		2861762A25D06B2300388E87 /* Notebooks */ = {
+			isa = PBXGroup;
+			children = (
+				2861762B25D06BA200388E87 /* NotebooksViewController.swift */,
+				2861762E25D06BED00388E87 /* Notebooks.storyboard */,
+			);
+			path = Notebooks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,6 +198,7 @@
 				2861761225D05B3F00388E87 /* LaunchScreen.storyboard in Resources */,
 				2861760F25D05B3F00388E87 /* Assets.xcassets in Resources */,
 				2861760A25D05B3D00388E87 /* Main.storyboard in Resources */,
+				2861762F25D06BED00388E87 /* Notebooks.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +211,7 @@
 			files = (
 				2861762325D063BE00388E87 /* DataController.swift in Sources */,
 				2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */,
+				2861762C25D06BA200388E87 /* NotebooksViewController.swift in Sources */,
 				2861760725D05B3D00388E87 /* MainViewController.swift in Sources */,
 				2861760325D05B3D00388E87 /* AppDelegate.swift in Sources */,
 				2861762725D0682800388E87 /* NotebookMo.swift in Sources */,
