@@ -14,6 +14,8 @@
 		2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2861760B25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld */; };
 		2861760F25D05B3F00388E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2861760E25D05B3F00388E87 /* Assets.xcassets */; };
 		2861761225D05B3F00388E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861761025D05B3F00388E87 /* LaunchScreen.storyboard */; };
+		2861762325D063BE00388E87 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762225D063BE00388E87 /* DataController.swift */; };
+		2861762725D0682800388E87 /* NotebookMo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762625D0682800388E87 /* NotebookMo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		2861760E25D05B3F00388E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2861761125D05B3F00388E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2861761325D05B3F00388E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2861762225D063BE00388E87 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		2861762625D0682800388E87 /* NotebookMo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookMo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			children = (
 				2861761C25D05C8800388E87 /* Assets */,
 				2861761A25D05BD500388E87 /* App */,
+				2861762025D0636400388E87 /* DataManager */,
 				2861761D25D05D4A00388E87 /* Screens */,
 				2861760B25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld */,
 			);
@@ -100,6 +105,23 @@
 				2861760825D05B3D00388E87 /* Main.storyboard */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		2861762025D0636400388E87 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				2861762125D0639800388E87 /* Local */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		2861762125D0639800388E87 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				2861762225D063BE00388E87 /* DataController.swift */,
+				2861762625D0682800388E87 /* NotebookMo.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,9 +194,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2861762325D063BE00388E87 /* DataController.swift in Sources */,
 				2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */,
 				2861760725D05B3D00388E87 /* MainViewController.swift in Sources */,
 				2861760325D05B3D00388E87 /* AppDelegate.swift in Sources */,
+				2861762725D0682800388E87 /* NotebookMo.swift in Sources */,
 				2861760525D05B3D00388E87 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
