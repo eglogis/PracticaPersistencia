@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2861760325D05B3D00388E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760225D05B3D00388E87 /* AppDelegate.swift */; };
 		2861760525D05B3D00388E87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760425D05B3D00388E87 /* SceneDelegate.swift */; };
-		2861760725D05B3D00388E87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760625D05B3D00388E87 /* ViewController.swift */; };
+		2861760725D05B3D00388E87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760625D05B3D00388E87 /* MainViewController.swift */; };
 		2861760A25D05B3D00388E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861760825D05B3D00388E87 /* Main.storyboard */; };
 		2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2861760B25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld */; };
 		2861760F25D05B3F00388E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2861760E25D05B3F00388E87 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		286175FF25D05B3D00388E87 /* ProyectoPersistencia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoPersistencia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2861760225D05B3D00388E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2861760425D05B3D00388E87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2861760625D05B3D00388E87 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2861760625D05B3D00388E87 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2861760925D05B3D00388E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2861760C25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ProyectoPersistencia.xcdatamodel; sourceTree = "<group>"; };
 		2861760E25D05B3F00388E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -58,16 +58,48 @@
 		2861760125D05B3D00388E87 /* ProyectoPersistencia */ = {
 			isa = PBXGroup;
 			children = (
-				2861760225D05B3D00388E87 /* AppDelegate.swift */,
-				2861760425D05B3D00388E87 /* SceneDelegate.swift */,
-				2861760625D05B3D00388E87 /* ViewController.swift */,
-				2861760825D05B3D00388E87 /* Main.storyboard */,
-				2861760E25D05B3F00388E87 /* Assets.xcassets */,
-				2861761025D05B3F00388E87 /* LaunchScreen.storyboard */,
-				2861761325D05B3F00388E87 /* Info.plist */,
+				2861761C25D05C8800388E87 /* Assets */,
+				2861761A25D05BD500388E87 /* App */,
+				2861761D25D05D4A00388E87 /* Screens */,
 				2861760B25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld */,
 			);
 			path = ProyectoPersistencia;
+			sourceTree = "<group>";
+		};
+		2861761A25D05BD500388E87 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				2861760425D05B3D00388E87 /* SceneDelegate.swift */,
+				2861760225D05B3D00388E87 /* AppDelegate.swift */,
+				2861761025D05B3F00388E87 /* LaunchScreen.storyboard */,
+				2861761325D05B3F00388E87 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2861761C25D05C8800388E87 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2861760E25D05B3F00388E87 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		2861761D25D05D4A00388E87 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				2861761E25D05D6700388E87 /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		2861761E25D05D6700388E87 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2861760625D05B3D00388E87 /* MainViewController.swift */,
+				2861760825D05B3D00388E87 /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */,
-				2861760725D05B3D00388E87 /* ViewController.swift in Sources */,
+				2861760725D05B3D00388E87 /* MainViewController.swift in Sources */,
 				2861760325D05B3D00388E87 /* AppDelegate.swift in Sources */,
 				2861760525D05B3D00388E87 /* SceneDelegate.swift in Sources */,
 			);
@@ -292,7 +324,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQQYXL5T6U;
-				INFOPLIST_FILE = ProyectoPersistencia/Info.plist;
+				INFOPLIST_FILE = ProyectoPersistencia/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +343,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CQQYXL5T6U;
-				INFOPLIST_FILE = ProyectoPersistencia/Info.plist;
+				INFOPLIST_FILE = ProyectoPersistencia/App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
