@@ -10,6 +10,6 @@ import UIKit
 class NotebooksViewController: UIViewController {
 
     override func viewDidLoad() {
-        
+        title = "Notebooks"
     }
 }
