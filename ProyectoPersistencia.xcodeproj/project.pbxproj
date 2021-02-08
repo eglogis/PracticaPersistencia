@@ -18,6 +18,7 @@
 		2861762725D0682800388E87 /* NotebookMo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762625D0682800388E87 /* NotebookMo.swift */; };
 		2861762C25D06BA200388E87 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762B25D06BA200388E87 /* NotebooksViewController.swift */; };
 		2861762F25D06BED00388E87 /* Notebooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861762E25D06BED00388E87 /* Notebooks.storyboard */; };
+		288C128525D1824D007D79AB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288C128425D1824D007D79AB /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		2861762625D0682800388E87 /* NotebookMo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookMo.swift; sourceTree = "<group>"; };
 		2861762B25D06BA200388E87 /* NotebooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
 		2861762E25D06BED00388E87 /* Notebooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notebooks.storyboard; sourceTree = "<group>"; };
+		288C128425D1824D007D79AB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		2861760125D05B3D00388E87 /* ProyectoPersistencia */ = {
 			isa = PBXGroup;
 			children = (
+				288C128225D1821E007D79AB /* Helpers */,
 				2861761C25D05C8800388E87 /* Assets */,
 				2861761A25D05BD500388E87 /* App */,
 				2861762025D0636400388E87 /* DataManager */,
@@ -136,6 +139,14 @@
 				2861762E25D06BED00388E87 /* Notebooks.storyboard */,
 			);
 			path = Notebooks;
+			sourceTree = "<group>";
+		};
+		288C128225D1821E007D79AB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				288C128425D1824D007D79AB /* DateFormatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288C128525D1824D007D79AB /* DateFormatter.swift in Sources */,
 				2861762325D063BE00388E87 /* DataController.swift in Sources */,
 				2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */,
 				2861762C25D06BA200388E87 /* NotebooksViewController.swift in Sources */,

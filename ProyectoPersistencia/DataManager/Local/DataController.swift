@@ -77,3 +77,32 @@ class DataController: NSObject {
         }
     }
 }
+
+extension DataController {
+    func loadNotebooks() {
+        let managedObjectContext = viewContext
+        NotebookMO.createNotebook(
+            createdAt: Date(),
+            title: "notebook 1",
+            in: managedObjectContext
+        )
+
+        NotebookMO.createNotebook(
+            createdAt: Date(),
+            title: "notebook 2",
+            in: managedObjectContext
+        )
+
+        NotebookMO.createNotebook(
+            createdAt: Date(),
+            title: "notebook 3",
+            in: managedObjectContext
+        )
+
+        do {
+            try managedObjectContext.save()
+        } catch {
+            fatalError("failure to save in background.")
+        }
+    }
+}
