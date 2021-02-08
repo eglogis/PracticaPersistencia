@@ -12,12 +12,52 @@ class NotebooksViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView?
 
+    private var deleteDataButton: UIBarButtonItem?
+    private var loadDataButton: UIBarButtonItem?
+
     var dataController: DataController?
     var fetchResultsController: NSFetchedResultsController<NSFetchRequestResult>?
 
     override func viewDidLoad() {
         title = "Notebooks"
         initializeFetchResultsController()
+        setupBarButton()
+        setupTableView()
+    }
+
+    @objc
+    func loadData() {
+        dataController?.saveNotebooksInBackground()
+    }
+
+    @objc
+    func deleteData() {
+        dataController?.save()
+        dataController?.delete()
+        dataController?.reset()
+        initializeFetchResultsController()
+        tableView?.reloadData()
+    }
+
+    private func setupBarButton() {
+        loadDataButton = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(loadData)
+        )
+        deleteDataButton = UIBarButtonItem(
+            image: UIImage(systemName: "trash"),
+            style: .plain,
+            target: self,
+            action: #selector(deleteData)
+        )
+        deleteDataButton?.tintColor = .red
+        navigationItem.leftBarButtonItem = loadDataButton
+        navigationItem.rightBarButtonItem = deleteDataButton
+    }
+
+    private func setupTableView() {
         tableView?.dataSource = self
         tableView?.rowHeight = UITableView.automaticDimension
     }
@@ -55,6 +95,7 @@ extension NotebooksViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let fetchResultsController = fetchResultsController {
+            deleteDataButton?.isEnabled = fetchResultsController.sections![section].numberOfObjects > 0
             return fetchResultsController.sections![section].numberOfObjects
         } else {
             return 0

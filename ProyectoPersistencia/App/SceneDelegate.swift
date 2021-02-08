@@ -46,7 +46,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return
         }
         UserDefaults.standard.set(true, forKey: "hasPreloadData")
-        dataController?.loadNotebooks()
+        dataController?.saveNotebooks()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

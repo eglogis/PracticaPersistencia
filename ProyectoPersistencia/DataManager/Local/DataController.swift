@@ -76,10 +76,42 @@ class DataController: NSObject {
             block(privateMOC)
         }
     }
+
+    func save() {
+        do {
+            try persistentContainer.viewContext.save()
+        } catch {
+            print("=== could not save view context ===")
+            print("error: \(error.localizedDescription)")
+        }
+    }
+
+    func reset() {
+        persistentContainer.viewContext.reset()
+    }
+
+    func delete() {
+
+        guard let persistentStoreUrl = persistentContainer
+                .persistentStoreCoordinator.persistentStores.first?.url else {
+            return
+        }
+
+        do {
+            try persistentContainer.persistentStoreCoordinator.destroyPersistentStore(
+                at: persistentStoreUrl,
+                ofType: NSSQLiteStoreType,
+                options: nil
+            )
+        } catch {
+            fatalError("could not delete test database. \(error.localizedDescription)")
+        }
+    }
 }
 
 extension DataController {
-    func loadNotebooks() {
+
+    func saveNotebooks() {
         let managedObjectContext = viewContext
         NotebookMO.createNotebook(
             createdAt: Date(),
@@ -103,6 +135,23 @@ extension DataController {
             try managedObjectContext.save()
         } catch {
             fatalError("failure to save in background.")
+        }
+    }
+
+    func saveNotebooksInBackground() {
+        performInBackground { (privateManagedObjectContext) in
+            let managedObjectContext = privateManagedObjectContext
+            NotebookMO.createNotebook(
+                createdAt: Date(),
+                title: "notebook nuevo",
+                in: managedObjectContext
+            )
+
+            do {
+                try managedObjectContext.save()
+            } catch {
+                fatalError("failure to save in background.")
+            }
         }
     }
 }
