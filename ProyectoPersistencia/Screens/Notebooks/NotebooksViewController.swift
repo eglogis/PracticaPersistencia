@@ -28,6 +28,11 @@ class NotebooksViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segueId = segue.identifier,
            segueId == "noteSegueIdentifier" {
+            let destination = segue.destination as! NotesViewController
+            let indexPathSelected = tableView?.indexPathForSelectedRow
+            let selectedNotebook = fetchResultsController?.object(at: indexPathSelected ?? IndexPath()) as! NotebookMO
+            destination.notebook = selectedNotebook
+            destination.dataController = dataController
         }
     }
 
@@ -96,7 +101,6 @@ class NotebooksViewController: UIViewController {
 
 extension NotebooksViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "noteSegueIdentifier", sender: nil)
     }
 }
