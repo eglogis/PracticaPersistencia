@@ -25,6 +25,12 @@ class NotebooksViewController: UIViewController {
         setupTableView()
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier,
+           segueId == "noteSegueIdentifier" {
+        }
+    }
+
     @objc
     func loadData() {
         dataController?.saveNotebooksInBackground()
@@ -59,6 +65,7 @@ class NotebooksViewController: UIViewController {
 
     private func setupTableView() {
         tableView?.dataSource = self
+        tableView?.delegate = self
         tableView?.rowHeight = UITableView.automaticDimension
     }
 
@@ -84,6 +91,13 @@ class NotebooksViewController: UIViewController {
         } catch {
             print("Error while trying to perform a notebook fetch.")
         }
+    }
+}
+
+extension NotebooksViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "noteSegueIdentifier", sender: nil)
     }
 }
 
