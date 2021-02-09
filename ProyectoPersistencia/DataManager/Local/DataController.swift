@@ -113,24 +113,51 @@ extension DataController {
 
     func saveNotebooks() {
         let managedObjectContext = viewContext
-        NotebookMO.createNotebook(
+        guard let notebook1 = NotebookMO.createNotebook(
             createdAt: Date(),
             title: "notebook 1",
             in: managedObjectContext
-        )
+        ) else { return }
 
-        NotebookMO.createNotebook(
+        guard let notebook2 = NotebookMO.createNotebook(
             createdAt: Date(),
             title: "notebook 2",
             in: managedObjectContext
-        )
+        ) else { return }
 
-        NotebookMO.createNotebook(
+        guard let notebook3 = NotebookMO.createNotebook(
             createdAt: Date(),
             title: "notebook 3",
             in: managedObjectContext
+        ) else { return }
+
+        NoteMO.createNote(
+            managedObjectContext: managedObjectContext,
+            notebook: notebook1,
+            title: "nota del notebook 1",
+            createdAt: Date()
         )
 
+        NoteMO.createNote(
+            managedObjectContext: managedObjectContext,
+            notebook: notebook1,
+            title: "nota del notebook 1",
+            createdAt: Date()
+        )
+
+        NoteMO.createNote(
+            managedObjectContext: managedObjectContext,
+            notebook: notebook2,
+            title: "nota del notebook 2",
+            createdAt: Date()
+        )
+
+        NoteMO.createNote(
+            managedObjectContext: managedObjectContext,
+            notebook: notebook3,
+            title: "nota del notebook 3",
+            createdAt: Date()
+        )
         do {
             try managedObjectContext.save()
         } catch {
