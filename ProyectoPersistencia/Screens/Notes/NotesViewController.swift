@@ -28,7 +28,12 @@ class NotesViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let segueId = segue.identifier,
-           segueId == "noteSegueIdentifier" {
+           segueId == "noteDetailSegueIdentifier" {
+            let destination = segue.destination as! NoteDetailViewController
+            let indexPathSelected = tableView?.indexPathForSelectedRow
+            let selectedNote = fetchResultsController?.object(at: indexPathSelected ?? IndexPath()) as! NoteMO
+            destination.note = selectedNote
+            destination.dataController = dataController
         }
     }
 
