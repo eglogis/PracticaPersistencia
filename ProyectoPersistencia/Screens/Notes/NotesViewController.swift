@@ -26,6 +26,12 @@ class NotesViewController: UIViewController {
         searchView?.delegate = self
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let segueId = segue.identifier,
+           segueId == "noteSegueIdentifier" {
+        }
+    }
+
     private func setupNavigationController() {
         title = "Notes"
         let addNoteBarButtonItem = UIBarButtonItem(
@@ -111,7 +117,7 @@ class NotesViewController: UIViewController {
 
     private func setupTable() {
         tableView?.dataSource = self
-        // tableView?.delegate = self
+        tableView?.delegate = self
         tableView?.rowHeight = UITableView.automaticDimension
     }
 }
@@ -143,7 +149,7 @@ extension NotesViewController: UISearchBarDelegate {
     }
 }
 
-extension NotesViewController: UITableViewDataSource {
+extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchResultsController?.sections?.count ?? 0
@@ -160,14 +166,12 @@ extension NotesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell",
                                                  for: indexPath)
-
         guard let note = fetchResultsController?.object(at: indexPath) as? NoteMO else {
             fatalError("Attempt to configure cell without a managed object")
         }
         cell.textLabel?.text = note.title
-        if let createAt = note.createAt {
-            cell.detailTextLabel?.text = HelperDateFormatter.textFrom(date: createAt)
-        }
+        cell.detailTextLabel?.text = note.contents
+        cell.detailTextLabel?.textColor = .gray
 
         if let photograph = note.photograph,
            let imageData = photograph.imageData,
@@ -176,7 +180,12 @@ extension NotesViewController: UITableViewDataSource {
         } else {
             cell.imageView?.image = nil
         }
+        cell.selectionStyle = .none
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "noteDetailSegueIdentifier", sender: nil)
     }
 }
 

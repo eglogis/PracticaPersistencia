@@ -141,11 +141,28 @@
                     <connections>
                         <outlet property="searchView" destination="X1l-2d-8Ac" id="0IU-iT-G3X"/>
                         <outlet property="tableView" destination="Kfs-AA-xFw" id="xTP-J1-7Ib"/>
+                        <segue destination="qOX-WE-dd7" kind="show" identifier="noteDetailSegueIdentifier" id="NC1-Vd-Cx9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zxa-DS-b4e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="792.75362318840587" y="-32.142857142857139"/>
+            <point key="canvasLocation" x="820" y="-32"/>
+        </scene>
+        <!--Note Detail View Controller-->
+        <scene sceneID="wFU-Wc-nh4">
+            <objects>
+                <viewController storyboardIdentifier="NoteDetailViewController" id="qOX-WE-dd7" customClass="NoteDetailViewController" customModule="ProyectoPersistencia" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="38I-rZ-6eQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="t3g-St-2Vx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="92L-Qm-V6p"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wc-9x-6I4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1626" y="-32"/>
         </scene>
     </scenes>
     <resources>

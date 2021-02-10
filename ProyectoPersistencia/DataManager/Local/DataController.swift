@@ -151,6 +151,7 @@ extension DataController {
             managedObjectContext: managedObjectContext,
             notebook: notebook1,
             title: "nota del notebook 1",
+            contents: "Contents",
             createdAt: Date()
         )
 
@@ -158,6 +159,7 @@ extension DataController {
             managedObjectContext: managedObjectContext,
             notebook: notebook1,
             title: "nota del notebook 1",
+            contents: "Contents",
             createdAt: Date()
         )
 
@@ -165,6 +167,7 @@ extension DataController {
             managedObjectContext: managedObjectContext,
             notebook: notebook2,
             title: "nota del notebook 2",
+            contents: "Contents",
             createdAt: Date()
         )
 
@@ -172,6 +175,7 @@ extension DataController {
             managedObjectContext: managedObjectContext,
             notebook: notebook3,
             title: "nota del notebook 3",
+            contents: "Contents",
             createdAt: Date()
         )
 
@@ -223,6 +227,7 @@ extension DataController {
             let note = NoteMO.createNote(managedObjectContext: managedObjectContext,
                                          notebook: copyNotebook,
                                          title: "titulo de nota",
+                                         contents: "Contents",
                                          createdAt: Date())
 
             note?.photograph = photograhMO

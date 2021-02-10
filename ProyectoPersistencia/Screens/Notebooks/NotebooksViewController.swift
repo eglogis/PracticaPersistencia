@@ -129,6 +129,7 @@ extension NotebooksViewController: UITableViewDataSource {
         }
         cell.textLabel?.text = notebook.title
         if let createAt = notebook.createAt {
+            cell.detailTextLabel?.textColor = .gray
             cell.detailTextLabel?.text = HelperDateFormatter.textFrom(date: createAt)
         }
 
