@@ -55,6 +55,36 @@ class NotesViewController: UIViewController {
         }
     }
 
+    func filterNotes(title: String) {
+
+        guard let dataController = dataController,
+              let notebook = notebook else { return }
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
+
+        let noteCreateAtSortDescriptor = NSSortDescriptor(key: "createAt", ascending: true)
+        fetchRequest.sortDescriptors = [noteCreateAtSortDescriptor]
+
+        fetchRequest.predicate = NSPredicate(
+            format: "(title CONTAINS[cd] %@) AND (notebook == %@)",
+            title, notebook)
+
+        let managedObjectContext = dataController.viewContext
+
+        fetchResultsController = NSFetchedResultsController(
+            fetchRequest: fetchRequest,
+            managedObjectContext: managedObjectContext,
+            sectionNameKeyPath: nil,
+            cacheName: nil
+        )
+
+        do {
+            try fetchResultsController?.performFetch()
+        } catch {
+            fatalError("couldn't find notes \(error.localizedDescription) ")
+        }
+    }
+
     private func setupTable() {
         tableView?.dataSource = self
         // tableView?.delegate = self
@@ -65,6 +95,12 @@ class NotesViewController: UIViewController {
 extension NotesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        if (searchText.isEmpty) {
+            initializeFetchResultsController()
+        } else {
+            filterNotes(title: searchText)
+        }
+        tableView?.reloadData()
     }
 }
 
