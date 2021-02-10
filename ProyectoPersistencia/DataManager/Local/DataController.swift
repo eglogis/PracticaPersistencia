@@ -131,6 +131,22 @@ extension DataController {
             in: managedObjectContext
         ) else { return }
 
+        let notebookImage = UIImage(systemName: "book.closed")
+        if let dataNotebookImage = notebookImage?.pngData() {
+            notebook1.photograph = PhotographMO.createPhoto(
+                imageData: dataNotebookImage,
+                managedObjectContext: managedObjectContext
+            )
+            notebook2.photograph = PhotographMO.createPhoto(
+                imageData: dataNotebookImage,
+                managedObjectContext: managedObjectContext
+            )
+            notebook3.photograph = PhotographMO.createPhoto(
+                imageData: dataNotebookImage,
+                managedObjectContext: managedObjectContext
+            )
+        }
+
         NoteMO.createNote(
             managedObjectContext: managedObjectContext,
             notebook: notebook1,
@@ -158,6 +174,7 @@ extension DataController {
             title: "nota del notebook 3",
             createdAt: Date()
         )
+
         do {
             try managedObjectContext.save()
         } catch {
@@ -168,11 +185,19 @@ extension DataController {
     func saveNotebooksInBackground() {
         performInBackground { (privateManagedObjectContext) in
             let managedObjectContext = privateManagedObjectContext
-            NotebookMO.createNotebook(
+            guard let notebook = NotebookMO.createNotebook(
                 createdAt: Date(),
                 title: "notebook nuevo",
                 in: managedObjectContext
-            )
+            ) else { return }
+
+            let notebookImage = UIImage(systemName: "book.closed")
+            if let dataNotebookImage = notebookImage?.pngData() {
+                notebook.photograph = PhotographMO.createPhoto(
+                    imageData: dataNotebookImage,
+                    managedObjectContext: managedObjectContext
+                )
+            }
 
             do {
                 try managedObjectContext.save()

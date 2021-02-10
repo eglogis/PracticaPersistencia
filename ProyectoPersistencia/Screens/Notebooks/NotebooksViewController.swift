@@ -71,7 +71,7 @@ class NotebooksViewController: UIViewController {
     private func setupTableView() {
         tableView?.dataSource = self
         tableView?.delegate = self
-        tableView?.rowHeight = UITableView.automaticDimension
+        tableView?.rowHeight = 100
     }
 
     private func initializeFetchResultsController() {
@@ -131,6 +131,13 @@ extension NotebooksViewController: UITableViewDataSource {
         if let createAt = notebook.createAt {
             cell.detailTextLabel?.text = HelperDateFormatter.textFrom(date: createAt)
         }
+
+        if let photograph = notebook.photograph,
+           let imageData = photograph.imageData,
+           let image = UIImage(data: imageData) {
+            cell.imageView?.image = image
+        }
+        cell.selectionStyle = .none
         return cell
     }
 }
