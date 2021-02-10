@@ -11,6 +11,7 @@ import CoreData
 class NotesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView?
+    @IBOutlet var searchView: UISearchBar?
 
     var dataController: DataController?
     var fetchResultsController: NSFetchedResultsController<NSFetchRequestResult>?
@@ -21,6 +22,7 @@ class NotesViewController: UIViewController {
         title = "Notes"
         initializeFetchResultsController()
         setupTable()
+        searchView?.delegate = self
     }
 
     func initializeFetchResultsController() {
@@ -57,6 +59,12 @@ class NotesViewController: UIViewController {
         tableView?.dataSource = self
         // tableView?.delegate = self
         tableView?.rowHeight = UITableView.automaticDimension
+    }
+}
+
+extension NotesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }
 

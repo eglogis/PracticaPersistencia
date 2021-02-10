@@ -139,6 +139,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="gBi-pT-m3P"/>
                     <connections>
+                        <outlet property="searchView" destination="X1l-2d-8Ac" id="0IU-iT-G3X"/>
                         <outlet property="tableView" destination="Kfs-AA-xFw" id="xTP-J1-7Ib"/>
                     </connections>
                 </viewController>
