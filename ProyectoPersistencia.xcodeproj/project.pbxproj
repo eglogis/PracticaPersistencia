@@ -10,6 +10,7 @@
 		2834C87825D3065A00AE3B07 /* NoteMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C87725D3065A00AE3B07 /* NoteMO.swift */; };
 		2834C87E25D30E6700AE3B07 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2834C87D25D30E6700AE3B07 /* NotesViewController.swift */; };
 		283F98E025D352F900E999CD /* PhotographMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283F98DF25D352F900E999CD /* PhotographMO.swift */; };
+		28594AE725D45FAA00B1B3DC /* DownSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28594AE625D45FAA00B1B3DC /* DownSampler.swift */; };
 		2861760325D05B3D00388E87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760225D05B3D00388E87 /* AppDelegate.swift */; };
 		2861760525D05B3D00388E87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760425D05B3D00388E87 /* SceneDelegate.swift */; };
 		2861760725D05B3D00388E87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861760625D05B3D00388E87 /* MainViewController.swift */; };
@@ -28,6 +29,7 @@
 		2834C87725D3065A00AE3B07 /* NoteMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteMO.swift; sourceTree = "<group>"; };
 		2834C87D25D30E6700AE3B07 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		283F98DF25D352F900E999CD /* PhotographMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotographMO.swift; sourceTree = "<group>"; };
+		28594AE625D45FAA00B1B3DC /* DownSampler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownSampler.swift; sourceTree = "<group>"; };
 		286175FF25D05B3D00388E87 /* ProyectoPersistencia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProyectoPersistencia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2861760225D05B3D00388E87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2861760425D05B3D00388E87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				288C128425D1824D007D79AB /* DateFormatter.swift */,
+				28594AE625D45FAA00B1B3DC /* DownSampler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28594AE725D45FAA00B1B3DC /* DownSampler.swift in Sources */,
 				288C128525D1824D007D79AB /* DateFormatter.swift in Sources */,
 				2861762325D063BE00388E87 /* DataController.swift in Sources */,
 				2861760D25D05B3D00388E87 /* ProyectoPersistencia.xcdatamodeld in Sources */,

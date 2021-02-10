@@ -12,6 +12,7 @@ class NotesViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView?
     @IBOutlet var searchView: UISearchBar?
+    private let picker = UIImagePickerController()
 
     var dataController: DataController?
     var fetchResultsController: NSFetchedResultsController<NSFetchRequestResult>?
@@ -19,10 +20,33 @@ class NotesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Notes"
+        setupNavigationController()
         initializeFetchResultsController()
         setupTable()
         searchView?.delegate = self
+    }
+
+    private func setupNavigationController() {
+        title = "Notes"
+        let addNoteBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "plus"),
+            style: .plain,
+            target: self,
+            action: #selector(openImagePicker)
+        )
+        navigationItem.rightBarButtonItem = addNoteBarButtonItem
+    }
+
+    @objc
+    func openImagePicker() {
+        picker.delegate = self
+        picker.allowsEditing = false
+
+        if  UIImagePickerController.isSourceTypeAvailable(.photoLibrary),
+            let availabletypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary) {
+            picker.mediaTypes = availabletypes
+        }
+        present(picker, animated: true, completion: nil)
     }
 
     func initializeFetchResultsController() {
@@ -92,6 +116,21 @@ class NotesViewController: UIViewController {
     }
 }
 
+extension NotesViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    func imagePickerController(
+        _ picker: UIImagePickerController,
+        didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]
+    ) {
+        picker.dismiss(animated: true) { [unowned self] in
+            if let urlImage = info[.imageURL] as? URL {
+                if let notebook = self.notebook {
+                    self.dataController?.addNote(with: urlImage, notebook: notebook)
+                }
+            }
+        }
+    }
+}
+
 extension NotesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
@@ -128,6 +167,14 @@ extension NotesViewController: UITableViewDataSource {
         cell.textLabel?.text = note.title
         if let createAt = note.createAt {
             cell.detailTextLabel?.text = HelperDateFormatter.textFrom(date: createAt)
+        }
+
+        if let photograph = note.photograph,
+           let imageData = photograph.imageData,
+           let image = UIImage(data: imageData) {
+            cell.imageView?.image = image
+        } else {
+            cell.imageView?.image = nil
         }
         return cell
     }
