@@ -229,9 +229,7 @@ extension DataController {
                                          title: "titulo de nota",
                                          contents: "Contents",
                                          createdAt: Date())
-
-            note?.photograph = photograhMO
-
+            photograhMO?.note = note
             do {
                 try managedObjectContext.save()
             } catch {

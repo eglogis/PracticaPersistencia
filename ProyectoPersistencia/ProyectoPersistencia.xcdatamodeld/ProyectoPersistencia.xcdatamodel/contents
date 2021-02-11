@@ -5,7 +5,7 @@
         <attribute name="createAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="notebook" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notebook" inverseName="note" inverseEntity="Notebook"/>
-        <relationship name="photograph" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Photograph" inverseName="note" inverseEntity="Photograph"/>
+        <relationship name="photograph" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Photograph" inverseName="note" inverseEntity="Photograph"/>
     </entity>
     <entity name="Notebook" representedClassName=".NotebookMO" syncable="YES" codeGenerationType="category">
         <attribute name="createAt" attributeType="Date" usesScalarValueType="NO"/>

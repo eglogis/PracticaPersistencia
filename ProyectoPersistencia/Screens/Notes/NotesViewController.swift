@@ -178,7 +178,8 @@ extension NotesViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailTextLabel?.text = note.contents
         cell.detailTextLabel?.textColor = .gray
 
-        if let photograph = note.photograph,
+        if note.photograph?.allObjects.count ?? 0 > 0,
+           let photograph = note.photograph?.allObjects[0] as? PhotographMO,
            let imageData = photograph.imageData,
            let image = UIImage(data: imageData) {
             cell.imageView?.image = image
