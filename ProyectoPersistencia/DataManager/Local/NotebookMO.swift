@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+@objc
 public class NotebookMO: NSManagedObject {
 
     public override func awakeFromInsert() {

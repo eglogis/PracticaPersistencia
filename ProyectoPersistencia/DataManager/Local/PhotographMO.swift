@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+@objc
 public class PhotographMO: NSManagedObject {
 
     static func createPhoto(imageData: Data,
@@ -16,6 +17,7 @@ public class PhotographMO: NSManagedObject {
                                                              into: managedObjectContext) as? PhotographMO
 
         photograph?.imageData = imageData
+        photograph?.createAt = Date()
 
         return photograph
     }

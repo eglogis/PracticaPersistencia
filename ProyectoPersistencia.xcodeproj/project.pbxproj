@@ -23,6 +23,7 @@
 		2861762725D0682800388E87 /* NotebookMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762625D0682800388E87 /* NotebookMO.swift */; };
 		2861762C25D06BA200388E87 /* NotebooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2861762B25D06BA200388E87 /* NotebooksViewController.swift */; };
 		2861762F25D06BED00388E87 /* Notebooks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2861762E25D06BED00388E87 /* Notebooks.storyboard */; };
+		286541E025D5BDAA00749F9E /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286541DF25D5BDAA00749F9E /* PhotoCell.swift */; };
 		288C128525D1824D007D79AB /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288C128425D1824D007D79AB /* DateFormatter.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		2861762625D0682800388E87 /* NotebookMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookMO.swift; sourceTree = "<group>"; };
 		2861762B25D06BA200388E87 /* NotebooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebooksViewController.swift; sourceTree = "<group>"; };
 		2861762E25D06BED00388E87 /* Notebooks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notebooks.storyboard; sourceTree = "<group>"; };
+		286541DF25D5BDAA00749F9E /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		288C128425D1824D007D79AB /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				28594AE925D4643700B1B3DC /* NoteDetailViewController.swift */,
+				286541DF25D5BDAA00749F9E /* PhotoCell.swift */,
 			);
 			path = NoteDetails;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286541E025D5BDAA00749F9E /* PhotoCell.swift in Sources */,
 				28594AE725D45FAA00B1B3DC /* DownSampler.swift in Sources */,
 				28594AEA25D4643700B1B3DC /* NoteDetailViewController.swift in Sources */,
 				288C128525D1824D007D79AB /* DateFormatter.swift in Sources */,

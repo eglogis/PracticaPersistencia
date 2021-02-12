@@ -8,6 +8,7 @@
 import Foundation
 import CoreData
 
+@objc
 public class NoteMO: NSManagedObject {
 
     @discardableResult
