@@ -31,6 +31,16 @@ class NoteDetailViewController: UIViewController {
         setupTable()
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("desaparezco")
+        guard let dataController = dataController,
+              let note = note else { return }
+        guard let titleNote = titleNote?.text else { return }
+        guard let contentNote = contentNote?.text else { return }
+        dataController.editNote(note: note, title: titleNote, content: contentNote)
+    }
+
     deinit {
         for o in blockOperations { o.cancel() }
         blockOperations.removeAll()

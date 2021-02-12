@@ -258,4 +258,21 @@ extension DataController {
             }
         }
     }
+
+    func editNote(note: NoteMO, title: String, content: String) {
+        performInBackground { (managedObjectContext) in
+
+            let noteID = note.objectID
+            let copyNote = managedObjectContext.object(with: noteID) as! NoteMO
+            copyNote.title = title
+            copyNote.contents = content
+
+            do {
+                try managedObjectContext.save()
+            } catch {
+                fatalError("could not create note with thumbnail image in background.")
+            }
+            self.save()
+        }
+    }
 }
