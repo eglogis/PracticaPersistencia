@@ -129,6 +129,7 @@
 		2861761D25D05D4A00388E87 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				2861762E25D06BED00388E87 /* Notebooks.storyboard */,
 				28594AEC25D4643F00B1B3DC /* NoteDetails */,
 				2834C87C25D30E4D00AE3B07 /* Notes */,
 				2861762A25D06B2300388E87 /* Notebooks */,
@@ -169,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				2861762B25D06BA200388E87 /* NotebooksViewController.swift */,
-				2861762E25D06BED00388E87 /* Notebooks.storyboard */,
 			);
 			path = Notebooks;
 			sourceTree = "<group>";
