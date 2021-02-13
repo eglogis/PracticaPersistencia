@@ -18,8 +18,6 @@ class NoteDetailViewController: UIViewController {
     private let collectionLayout = UICollectionViewFlowLayout()
     private let picker = UIImagePickerController()
 
-    private let numberOfCellsPerRow: CGFloat = 3
-    private let rowSpacing: CGFloat = 8
     var dataController: DataController?
     var fetchResultsController: NSFetchedResultsController<NSFetchRequestResult>?
     var note: NoteMO?
@@ -100,24 +98,21 @@ class NoteDetailViewController: UIViewController {
     }
 }
 
+private struct Constants {
+    static let numberOfCellsPerRow: CGFloat = 3
+    static let rowSpacing: CGFloat = 8
+}
+
 extension NoteDetailViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let yourWidth = (collectionView.bounds.width/numberOfCellsPerRow) - rowSpacing
+        let yourWidth = (collectionView.bounds.width/Constants.numberOfCellsPerRow) - Constants.rowSpacing
         let yourHeight = yourWidth
         return CGSize(width: yourWidth, height: yourHeight)
     }
 
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
-    }
-
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 8
-    }
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return Constants.rowSpacing
     }
 }
 
